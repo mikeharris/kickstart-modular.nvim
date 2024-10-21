@@ -45,4 +45,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Neotree
+vim.keymap.set('n', '\\', '<cmd>Neotree reveal<cr>', { desc = 'Reveal or Hide Neotree' })
+
+-- Lazy Package Manager
+vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = '[L]azy package manager' })
+
 -- vim: ts=2 sts=2 sw=2 et

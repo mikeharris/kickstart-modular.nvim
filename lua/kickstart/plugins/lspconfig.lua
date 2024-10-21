@@ -168,16 +168,53 @@ return {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        cssls = {},
+        dockerls = {},
+        gopls = {
+          settings = {
+            gopls = {
+              experimentalPostfixCompletions = true,
+              completeUnimported = true,
+              usePlaceholders = true,
+              staticcheck = true,
+              hints = {
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+                constantValues = true,
+                assignVariableTypes = true,
+              },
+              analyses = {
+                unusedparams = true,
+                shadow = true,
+              },
+            },
+            init_options = {
+              usePlaceholders = true,
+            },
+          },
+        },
+        html = {},
+        htmx = {},
+        jsonls = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                typeCheckingMode = 'basic',
+              },
+            },
+          },
+        },
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`ts_ls`) will work just fine
-        -- ts_ls = {},
+        ts_ls = {},
         --
 
         lua_ls = {
